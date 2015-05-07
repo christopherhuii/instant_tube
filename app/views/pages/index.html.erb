@@ -1,0 +1,9 @@
+<h1>InstantTube</h1>
+
+<%= form_tag(root_path, method: "get") do %>
+  <%= label_tag(:search, "Search for Videos Here") %><br>
+  <br>
+  <%= text_field_tag :search %><br>
+  <br>
+  <%= submit_tag "Search" %>
+<% end %>
