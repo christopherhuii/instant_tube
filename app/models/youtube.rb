@@ -9,7 +9,8 @@ class Youtube
   end
 
   def fetch_videos(search)
-    HTTParty.get("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=#{search}&type=video&key=" + ENV['YOUTUBE_API_KEY'] + "&part=snippet,contentDetails,statistics,status")
+    converted_query = search.squish.downcase.tr(" ", "_")
+    HTTParty.get("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=#{converted_query}&type=video&key=" + ENV['YOUTUBE_API_KEY'] + "&part=snippet,contentDetails,statistics,status")
   end
 end
 
