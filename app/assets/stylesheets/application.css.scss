@@ -19,6 +19,12 @@
 
 .page_wrapper {
   text-align: center;
+  a {
+    color: black;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 .search_form {
