@@ -10,16 +10,19 @@
   <% end %>
 
   <div class="row">
-    <% @videos.videos.each do |video| %>
-    <div class="col-md-3">
-      <div class="thumbnail">
-        <%= image_tag(video['snippet']['thumbnails']['high']['url']) %>
-        <div class="caption">
-          <h3><%= video['snippet']['title'] %></h3>
-          <p><%= video['snippet']['description'] %></p>
+    <% @search_query.videos.each do |video| %>
+
+      <%= link_to "https://www.youtube.com/watch?v=" + video['id']['videoId'] do %>
+      <div class="col-md-3">
+        <div class="thumbnail">
+          <%= image_tag(video['snippet']['thumbnails']['high']['url']) %>
+          <div class="caption">
+            <h3><%= video['snippet']['title'] %></h3>
+            <p><%= video['snippet']['description'] %></p>
+          </div>
         </div>
       </div>
-    </div>
+      <% end %>
     <% end %>
   </div>
 </div>
