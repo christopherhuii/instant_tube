@@ -15,3 +15,11 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+// This probably isn't the best way to do a live search, but I came up with this..
+$(function(){
+  $('input#search').bind('keyup', function(){
+    console.log('keyup is working');
+    $('input[name=commit]').delay(20).click();
+  })
+})
