@@ -5,13 +5,13 @@ class Youtube
     self.search = search
 
     json_response = fetch_videos(search)
-    puts JSON.pretty_generate(json_response) # THIS IS AWESOME. IT PRINTS OUT JSON ALL INDENTED AND STUFF, OMGGGG
+    puts JSON.pretty_generate(json_response)                          # THIS IS AWESOME. IT PRINTS OUT JSON ALL FORMATTED, OMGGGG
     show_videos(json_response)
-    video_information
+    # video_information
   end
 
   def fetch_videos(search)
-    converted_query = search.squish.downcase.tr(" ", "_")
+    converted_query = search.squish.downcase.tr(" ", "_")             # Removes the spaces from the search query
     HTTParty.get("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=#{converted_query}&type=video&key=" + ENV['YOUTUBE_API_KEY'] + "&part=snippet,contentDetails,statistics,status")
   end
 
@@ -22,12 +22,12 @@ class Youtube
     end
   end
 
-  def video_information
-    @videos.each do |video|
-      self.title = video['snippet']['title']
-      self.description = video['snippet']['description']
-      self.image = video['snippet']['thumbnails']['high']['url']
-    end
-  end
+  # def video_information                                             # Still want to use this, not sure how right not
+  #   @videos.each do |video|
+  #     self.title = video['snippet']['title']
+  #     self.description = video['snippet']['description']
+  #     self.image = video['snippet']['thumbnails']['high']['url']
+  #   end
+  # end
 end
 
