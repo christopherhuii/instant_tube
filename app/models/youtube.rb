@@ -1,11 +1,11 @@
 class Youtube
-  attr_accessor :search, :title, :description, :image
+  attr_accessor :search, :title, :description, :image, :videos
 
   def initialize(search)
     self.search = search
 
     json_response = fetch_videos(search)
-    puts JSON.pretty_generate(json_response) # THIS IS AWESOME. IT PRINTS OUT JSON ALL INDENTED AND STUFF, OMGGGG
+    # puts JSON.pretty_generate(json_response) # THIS IS AWESOME. IT PRINTS OUT JSON ALL INDENTED AND STUFF, OMGGGG
     show_videos(json_response)
     video_information
   end
