@@ -14,12 +14,26 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require jquery.turbolinks
 //= require_tree .
 
-// This probably isn't the best way to do a live search, but I came up with this..
+// This probably isn't exactly a live search, but I kinda(?) got this to work..
+
+var keyStrokeTimer;
+var typingDelay = 200;
+
+
 $(function(){
   $('input#search').bind('keyup', function(){
-    console.log('keyup is working');
-    $('input[name=commit]').delay(20).click();
-  })
+    clearTimeout(keyStrokeTimer);
+    keyStrokeTimer = setTimeout(doneTyping, typingDelay);
+  });
+
+  $('input#search').bind('keydown', function(){
+    clearTimeout(keyStrokeTimer);
+  });
 })
+
+function doneTyping(){
+  $('input[name=commit]').click();
+};
