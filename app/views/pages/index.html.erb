@@ -1,5 +1,5 @@
 <div class="page_wrapper">
-  <h1><%= link_to "InstantTube", root_path, class: "brand_title" %></h1>
+  <h1><%= link_to "InstantTube", root_path %></h1>
 
   <%= form_tag(root_path, method: "get", class: "search_form") do %>
     <%= label_tag(:search, "Search for Videos Here") %><br>
@@ -12,7 +12,7 @@
   <% @search_query.videos.each_slice(4) do |slice| %>
     <div class="row">
       <% slice.each do |video| %>
-        <%= link_to "https://www.youtube.com/watch?v=" + video['id']['videoId'] do %>
+        <%= link_to "https://www.youtube.com/embed/" + video['id']['videoId'] do %>
         <div class="col-md-3">
           <div class="thumbnail">
             <%= image_tag(video['snippet']['thumbnails']['high']['url']) %>
