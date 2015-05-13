@@ -28,7 +28,7 @@ $(function(){
     var convertedQuery = $(this).val().split(' ').join('_');
 
     $.ajax({
-      url: "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=" + convertedQuery + "&type=video&key=AIzaSyCAvKbTw9BmO5E2r-Hqtm2pl48emybPGto&part=snippet,contentDetails,statistics,status",
+      url: "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=" + convertedQuery + "&type=video&key=AIzaSyBG5LWlewZpols3cZR5IexovrPSc8dAE1Q&part=snippet,contentDetails,statistics,status",
       dataType: 'jsonp'
     }).done(function(serverData){
       // console.log(serverData);
