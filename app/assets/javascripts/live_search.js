@@ -1,7 +1,7 @@
 // This probably isn't exactly a live search, but I kinda(?) got this to work..
 
 var keyStrokeTimer;
-var typingDelay = 200;
+var typingDelay = 400;
 
 
 $(function(){
