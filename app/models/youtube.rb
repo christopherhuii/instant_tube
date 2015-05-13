@@ -12,7 +12,7 @@ class Youtube
 
   def fetch_videos(search)
     converted_query = search.squish.downcase.tr(" ", "_")             # Removes the spaces from the search query
-    HTTParty.get("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=#{converted_query}&type=video&key=" + ENV['YOUTUBE_API_KEY'] + "&part=snippet,contentDetails,statistics,status")
+    HTTParty.get("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=#{converted_query}&type=video&key=" + ENV['YOUTUBE_API_KEY'].to_s + "&part=snippet,contentDetails,statistics,status")
   end
 
   def show_videos(json_response)
