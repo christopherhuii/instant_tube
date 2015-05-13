@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'httparty'
 gem 'bootstrap-sass', '~> 3.3.4.1'
 gem 'jquery-turbolinks'
+gem 'rails_12factor'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
