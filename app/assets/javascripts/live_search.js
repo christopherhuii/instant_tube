@@ -33,7 +33,15 @@ $(function(){
     }).done(function(serverData){
       // console.log(serverData);
       var videoCount = serverData['items'].length;
-      document.getElementById("videos").innerHTML = "";                        // Used to clear the previous results on every keystroke
+
+      //This is some messy code
+      document.getElementById("embedded_player").innerHTML = "";   // Used to clear the previous results on every keystroke
+      document.getElementById("videos").innerHTML = "";   // Used to clear the previous results on every keystroke
+
+
+      //THIS IS THE WORST AND MESSIEST CODE EVER. FIX THIS IMMEDIATELY
+      $('#embedded_player').append ('<div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="https://www.youtube.com/embed/' + serverData['items'][0]['id']['videoId'] + "\"></iframe></div>");
+
       for (var i = 0; i < videoCount; i++){
         $('#videos').append('<p><a href="https://www.youtube.com/embed/' + serverData['items'][i]['id']['videoId'] + '"> Title: ' + serverData['items'][i]['snippet']['title'] + '</a></p>');
       };
