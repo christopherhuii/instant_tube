@@ -9,25 +9,25 @@
     <%= submit_tag "Search", class: "btn btn-default" %>
   <% end %>
 
-  <% @search_query.videos.each_slice(4) do |slice| %>
-    <div class="row">
-      <% slice.each do |video| %>
-        <%= link_to "https://www.youtube.com/embed/" + video['id']['videoId'] do %>
-        <div class="col-md-3">
-          <div class="thumbnail">
-            <%= image_tag(video['snippet']['thumbnails']['high']['url']) %>
-            <div class="caption">
-              <h3><%= video['snippet']['title'] %></h3>
-              <p><%= video['snippet']['description'] %></p>
-            </div>
-          </div>
-        </div>
-        <% end %>
-      <% end %>
-    </div>
-  <% end %>
+  <%# @search_query.videos.each_slice(4) do |slice| %>
+    <!-- <div class="row"> -->
+      <%# slice.each do |video| %>
+        <%#= link_to "https://www.youtube.com/embed/" + video['id']['videoId'] do %>
+        <!-- <div class="col-md-3"> -->
+          <!-- <div class="thumbnail"> -->
+            <%#= image_tag(video['snippet']['thumbnails']['high']['url']) %>
+            <!-- <div class="caption"> -->
+              <!-- <h3><%#= video['snippet']['title'] %></h3> -->
+              <!-- <p><%#= video['snippet']['description'] %></p> -->
+            <!-- </div> -->
+          <!-- </div> -->
+        <!-- </div> -->
+        <%# end %>
+      <%# end %>
+    <!-- </div> -->
+  <%# end %>
 
-  <!-- <div id="videos"></div> -->                              <!-- This was used for the AJAX way I tried to implement-->
+  <div id="videos"></div>                              <!-- This was used for the AJAX way I tried to implement-->
 
 
 </div>
