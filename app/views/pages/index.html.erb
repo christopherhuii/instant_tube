@@ -1,37 +1,38 @@
 <div class="page_wrapper">
-  <h1><%= link_to "InstantTube", root_path %></h1>
+  <div class="row">
+    <h1><%= link_to "InstantTube", root_path %></h1>
+    <div class="input-field">
+      <%= form_tag(root_path, method: "get", class: "col s12") do %>
+        <%= label_tag(:search, "Search for Videos Here", class: "col s6 offset-s3") %><br>
+        <br>
+          <%= text_field_tag :search, nil,  class: "col s8 offset-s2" %><br>
+        <br>
+      <% end %>
+    </div>
 
-  <%= form_tag(root_path, method: "get", class: "search_form") do %>
-    <%= label_tag(:search, "Search for Videos Here") %><br>
-    <br>
-    <%= text_field_tag :search %><br>
-    <br>
-    <%= submit_tag "Search", class: "btn btn-default" %>
-  <% end %>
 
+  <!-- This code was used for the jQuery live search. Now that I am using AJAX, I no longer need this code. Keeping for reference -->
 
-<!-- This code was used for the jQuery live search. Now that I am using AJAX, I no longer need this code. Keeping for reference -->
-
-  <%# @search_query.videos.each_slice(4) do |slice| %>
-    <!-- <div class="row"> -->
-      <%# slice.each do |video| %>
-        <%#= link_to "https://www.youtube.com/embed/" + video['id']['videoId'] do %>
-        <!-- <div class="col-md-3"> -->
-          <!-- <div class="thumbnail"> -->
-            <%#= image_tag(video['snippet']['thumbnails']['high']['url']) %>
-            <!-- <div class="caption"> -->
-              <!-- <h3><%#= video['snippet']['title'] %></h3> -->
-              <!-- <p><%#= video['snippet']['description'] %></p> -->
+    <%# @search_query.videos.each_slice(4) do |slice| %>
+      <!-- <div class="row"> -->
+        <%# slice.each do |video| %>
+          <%#= link_to "https://www.youtube.com/embed/" + video['id']['videoId'] do %>
+          <!-- <div class="col-md-3"> -->
+            <!-- <div class="thumbnail"> -->
+              <%#= image_tag(video['snippet']['thumbnails']['high']['url']) %>
+              <!-- <div class="caption"> -->
+                <!-- <h3><%#= video['snippet']['title'] %></h3> -->
+                <!-- <p><%#= video['snippet']['description'] %></p> -->
+              <!-- </div> -->
             <!-- </div> -->
           <!-- </div> -->
-        <!-- </div> -->
+          <%# end %>
         <%# end %>
-      <%# end %>
-    <!-- </div> -->
-  <%# end %>
+      <!-- </div> -->
+    <%# end %>
 
-  <div id="embedded_player"></div>
-  <div id="videos"></div>                              <!-- This was used for the AJAX way I tried to implement-->
+    <div id="embedded_player"></div>
+    <div id="videos"></div>                              <!-- This was used for the AJAX way I tried to implement-->
 
-
+  </div>
 </div>

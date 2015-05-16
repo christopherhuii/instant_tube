@@ -26,6 +26,8 @@
   }
 }
 
-.search_form {
-  margin: 3%;
+
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #81d4fa;
+  box-shadow: 0 1px 0 0 #81d4fa;
 }
