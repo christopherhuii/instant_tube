@@ -37,12 +37,12 @@ $(function(){
       var firstVideoId = serverData['items'][0]['id']['videoId'];
 
       //This is some messy code
-      document.getElementById("video").innerHTML = "";   // Used to clear the previous results on every keystroke
+      document.getElementsByClassName("video-container").innerHTML = "";   // Used to clear the previous results on every keystroke
       document.getElementById("videos").innerHTML = "";   // Used to clear the previous results on every keystroke
 
 
       //THIS IS THE WORST AND MESSIEST CODE EVER. FIX THIS IMMEDIATELY
-      $('#video').append ('<iframe width="853" height="480" src="https://www.youtube.com/embed/' + firstVideoId + '\"  frameborder="0" allowfullscreen></iframe>');
+      $('.video-container').append ('<iframe width="853" height="480" src="https://www.youtube.com/embed/' + firstVideoId + '\"  frameborder="0" allowfullscreen></iframe>');
 
       for (var i = 0; i < videoCount; i++){
 
